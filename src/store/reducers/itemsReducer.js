@@ -5,6 +5,7 @@ import {
   DECREMENT_ITEM,
   REMOVE_ITEM,
 } from "../actions/Types";
+import { add, decrement, increment, remove } from "../../utils";
 
 const initialState = {
   items: [],
@@ -17,67 +18,26 @@ export default function (state = initialState, action) {
       return { ...state, items: action.payload };
 
     case ADD_ITEM: {
-      let tempCart = [...state.cartList];
-      const tempProducts = [...state.items];
-      let tempItem = tempCart.find(({ id }) => id === action.payload.id);
-      if (!tempItem) {
-        tempItem = tempProducts.find(({ id }) => id === action.payload.id);
-        let total = tempItem.price;
-        let cartItem = { ...tempItem, count: 1, total };
-
-        tempCart = [...tempCart, cartItem];
-      } else {
-        tempItem.count++;
-        tempItem.total = parseFloat(
-          (tempItem.price * tempItem.count).toFixed(2)
-        );
-      }
-      return { ...state, cartList: tempCart };
+      return { ...state, cartList: add(state, action.payload.id) };
     }
 
-    case INCREMENT_ITEM: {
-      let tempCart = [...state.cartList];
-      const cartItem = tempCart.find(({ id }) => id === action.payload);
-
-      cartItem.count++;
-      cartItem.total = parseFloat((cartItem.count * cartItem.price).toFixed(2));
+    case INCREMENT_ITEM:
       return {
         ...state,
-        cartList: [...tempCart],
+        cartList: increment(state, action.payload),
       };
-    }
 
-    case DECREMENT_ITEM: {
-      let tempCart = [...state.cartList];
-      const cartItem = tempCart.find(({ id }) => id === action.payload);
-
-      cartItem.count--;
-      if (cartItem.count === 0) {
-        let tempCart = [...state.cartList];
-        tempCart = tempCart.filter(({ id }) => id !== action.payload);
-        return {
-          ...state,
-          cartList: [...tempCart],
-        };
-      } else {
-        cartItem.total = parseFloat(
-          (cartItem.count * cartItem.price).toFixed(2)
-        );
-      }
+    case DECREMENT_ITEM:
       return {
         ...state,
-        cartList: [...tempCart],
+        cartList: decrement(state, action.payload),
       };
-    }
 
-    case REMOVE_ITEM: {
-      let tempCart = [...state.cartList];
-      tempCart = tempCart.filter(({ id }) => id !== action.payload);
+    case REMOVE_ITEM:
       return {
         ...state,
-        cartList: [...tempCart],
+        cartList: remove(state, action.payload),
       };
-    }
 
     default:
       return state;
