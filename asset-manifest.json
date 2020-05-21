@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/ZenbitStore/static/js/main.aa948ea3.chunk.js",
+    "main.js.map": "/ZenbitStore/static/js/main.aa948ea3.chunk.js.map",
+    "runtime-main.js": "/ZenbitStore/static/js/runtime-main.c154bf0c.js",
+    "runtime-main.js.map": "/ZenbitStore/static/js/runtime-main.c154bf0c.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/ZenbitStore/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.24e52aea.chunk.js": "/ZenbitStore/static/js/2.24e52aea.chunk.js",
+    "static/js/2.24e52aea.chunk.js.map": "/ZenbitStore/static/js/2.24e52aea.chunk.js.map",
+    "index.html": "/ZenbitStore/index.html",
+    "precache-manifest.8c81ca34040574489bfc3e90681b4090.js": "/ZenbitStore/precache-manifest.8c81ca34040574489bfc3e90681b4090.js",
+    "service-worker.js": "/ZenbitStore/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/ZenbitStore/static/css/2.af3c1da9.chunk.css.map",
+    "static/js/2.24e52aea.chunk.js.LICENSE.txt": "/ZenbitStore/static/js/2.24e52aea.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c154bf0c.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.24e52aea.chunk.js",
+    "static/js/main.aa948ea3.chunk.js"
+  ]
+}
