@@ -5,3 +5,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, I use:
 
 ### `react/redux/react-bootsrap`
+
+`npm i`
+`npm start`
